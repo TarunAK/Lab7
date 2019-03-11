@@ -44,12 +44,13 @@ int main()
 	Task_list_init();
 	
 	//Initialize our periodic tasks, with periods 100 and 200 ticks (1 and 2s), respectively
-	Task_add((uint32_t)LED_toggle,(uint32_t) 100, (uint32_t) 1);
+	//Task_add((uint32_t)LED_toggle,(uint32_t) 100, (uint32_t) 1);
 	
-	Task_event_add((uint32_t)LED_RGB_toggle, SWITCH_P1_4, (uint32_t) 1);
+	//Task_event_add((uint32_t)LED_RGB_toggle, SWITCH_P1_4, (uint32_t) 1);
 	
 	//This will begin scheduling our tasks 
-	Task_schedule();
-	
+	//Task_schedule();
+	BSP_LCD_Init();
+	BSP_LCD_DrawChar(10,10,"2",0xFFFF, 0x0000, 3);
 	return 0;
 }
